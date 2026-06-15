@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waves4youth | Next-Gen AVGC Skills Academy</title>
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --dark-bg: #121212;
+            --card-bg: #1E1E1E;
+            --text-light: #F5F5F5;
+            --accent-gold: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2A2A2A;
+        }
+
+        .logo-group h1 {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .logo-group p {
+            font-size: 12px;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        .lang-select {
+            background: var(--card-bg);
+            color: var(--text-light);
+            border: 1px solid var(--primary);
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 80px 5% 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FF6B35, #E84855);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #BBB;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #2A2A2A;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .feature-card.premium {
+            border-color: var(--accent-gold);
+        }
+
+        .feature-card.premium h3 {
+            color: var(--accent-gold);
+        }
+
+        .gov-banner {
+            background: linear-gradient(90deg, rgba(255,107,53,0.1) 0%, rgba(76,175,80,0.1) 100%);
+            border: 1px solid #4CAF50;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 40px 5%;
+            text-align: center;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .gov-banner h4 {
+            color: #4CAF50;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #2A2A2A;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-group">
+            <h1>Waves4youth</h1>
+            <p>NEXT-GEN AVGC SKILLS ACADEMY</p>
+        </div>
+        <select class="lang-select">
+            <option value="en">English</option>
+            <option value="hi">हिंदी (Hindi)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+        </select>
+    </header>
+
+    <section class="hero">
+        <h2>Ride the Wave of Digital Creativity</h2>
+        <p>Master 2D Animation, 3D Modeling, VFX Compositing, and Cinematography. Get direct access to Skill India certifications and placement matching with premium Indian production studios.</p>
+        <a href="#register" class="cta-btn">Launch Mobile App Platform</a>
+    </section>
+
+    <section class="gov-banner">
+        <h4>NATIONAL SKILL DEVELOPMENT CORPORATION ALIGNED</h4>
+        <p>Our curriculum matches national competency levels. Complete your portfolio to receive verifiable Skill India digital credentials pushed straight to your DigiLocker locker profile wallet.</p>
+    </section>
+
+    <main class="features-grid">
+        <div class="feature-card">
+            <h3>🎥 AVGC Learning Tracks</h3>
+            <p>Short, low-bandwidth optimized micro-lessons covering Blender, Nuke, storyboarding, and virtual production setups tailored for Indian youth.</p>
+        </div>
+        <div class="feature-card premium">
+            <h3>✨ Multilingual AI Co-Pilot</h3>
+            <p>Unlock all learning tracks to activate your personal AI mentor. Get instantaneous layout feedback and voice script corrections translated into your native tongue.</p>
+        </div>
+        <div class="feature-card">
+            <h3>💼 Studio Placement Hub</h3>
+            <p>Stop waiting on manual reviews. Our algorithmic match engine submits your AI-graded project portfolios directly to hiring managers in active tech hubs.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Waves4youth. All rights reserved. Empowering next-generation creators across India.</p>
+    </footer>
+
+</body>
+</html>
