@@ -127,12 +127,6 @@
             border-radius: 8px;
             color: white;
             font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            border-color: var(--primary);
-            outline: none;
         }
 
         .submit-btn {
@@ -146,11 +140,6 @@
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
         }
 
         .success-message {
@@ -161,34 +150,124 @@
             font-weight: bold;
         }
 
-        .features-grid {
+        /* SECTION HEADER STYLING */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 20px;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* VISUAL AVGC COURSE CARDS LAYER */
+        .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            padding: 40px 5%;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .feature-card {
+        .course-visual-card {
             background-color: var(--card-bg);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #2A2A2A;
+            transition: 0.3s;
+        }
+
+        .course-visual-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .course-image-frame {
+            width: 100%;
+            height: 200px;
+            background-color: #2c2c2c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .course-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-details {
+            padding: 24px;
+        }
+
+        .course-details h4 {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .course-details p {
+            font-size: 14px;
+            color: #AAA;
+        }
+
+        /* METRIC TESTIMONIAL GRID STYLING */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 20px 5%;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        .testimonial-card {
+            background-color: #161616;
             padding: 30px;
             border-radius: 12px;
-            border: 1px solid #2A2A2A;
+            border-left: 4px solid var(--primary);
+            position: relative;
         }
 
-        .feature-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
+        .testimonial-text {
+            font-style: italic;
+            color: #DDD;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .author-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h5 {
             color: white;
+            font-size: 14px;
+            font-weight: 600;
         }
 
-        .feature-card.premium {
-            border-color: var(--accent-gold);
-        }
-
-        .feature-card.premium h3 {
-            color: var(--accent-gold);
+        .author-info p {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: bold;
         }
 
         .gov-banner {
@@ -214,7 +293,6 @@
             color: #666;
             font-size: 14px;
             border-top: 1px solid #2A2A2A;
-            margin-top: 60px;
         }
     </style>
 </head>
@@ -271,40 +349,3 @@
             <div class="success-message" id="successMessage">
                 🎉 Shabaash! Your early access slot has been safely secured. We will text you your setup key when the multi-lingual labs open!
             </div>
-        </div>
-    </section>
-
-    <section class="gov-banner">
-        <h4>NATIONAL SKILL DEVELOPMENT CORPORATION ALIGNED</h4>
-        <p>Our curriculum matches national competency levels. Complete your portfolio to receive verifiable Skill India digital credentials pushed straight to your DigiLocker locker profile wallet.</p>
-    </section>
-
-    <main class="features-grid">
-        <div class="feature-card">
-            <h3>🎥 AVGC Learning Tracks</h3>
-            <p>Short, low-bandwidth optimized micro-lessons covering Blender, Nuke, storyboarding, and virtual production setups tailored for Indian youth.</p>
-        </div>
-        <div class="feature-card premium">
-            <h3>✨ Multilingual AI Co-Pilot</h3>
-            <p>Unlock all learning tracks to activate your personal AI mentor. Get instantaneous layout feedback and voice script corrections translated into your native tongue.</p>
-        </div>
-        <div class="feature-card">
-            <h3>💼 Studio Placement Hub</h3>
-            <p>Stop waiting on manual reviews. Our algorithmic match engine submits your AI-graded project portfolios directly to hiring managers in active tech hubs.</p>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Waves4youth. All rights reserved. Empowering next-generation creators across India.</p>
-    </footer>
-
-    <script>
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('studentName').value;
-            const mobile = document.getElementById('studentMobile').value;
-            const track = document.getElementById('avgcTrack').value;
-            
-            console.log("New Student Pre-Registration Received:", { name, mobile, track });
-            
-            document.getElementById('intakeForm').style.display = 'none';
