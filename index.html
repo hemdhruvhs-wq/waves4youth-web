@@ -1,715 +1,573 @@
+None selected 
+
+Skip to content
+Using Gmail with screen readers
+1 of 21,903
+Original code waves
+Inbox
+
+Hemant Shah <hemdhruv.hs@gmail.com>
+Attachments
+11:41 AM (1 minute ago)
+to me
+
+ One attachment
+  •  Scanned by Gmail
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waves4youth | Next-Gen AVGC Skills Academy</title>
-    <style>
-        :root {
-            --primary: #FF6B35;
-            --dark-bg: #121212;
-            --card-bg: #1E1E1E;
-            --text-light: #F5F5F5;
-            --accent-gold: #FFD700;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waves4youth | Next-Gen AVGC Skills Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    :root {
+      --orange: #FF6B35;
+      --orange-dark: #e85520;
+      --black: #0D0D0D;
+      --dark: #141414;
+      --card: #1C1C1C;
+      --border: #272727;
+      --text: #F0F0F0;
+      --muted: #888;
+      --gold: #FFD700;
+    }
 
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-        header {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #2A2A2A;
-        }
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--orange); text-decoration: none; }
+    .nav-logo span { color: var(--text); }
+    .nav-cta {
+      background: var(--orange); color: #fff;
+      border: none; border-radius: 8px;
+      padding: 10px 18px; font-size: 13px; font-weight: 600;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      text-decoration: none;
+    }
 
-        .logo-group h1 {
-            color: var(--primary);
-            font-size: 24px;
-            font-weight: 800;
-        }
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 100px 24px 60px;
+      background: radial-gradient(ellipse at top right, rgba(255,107,53,0.12) 0%, transparent 60%),
+                  radial-gradient(ellipse at bottom left, rgba(255,107,53,0.06) 0%, transparent 50%),
+                  var(--black);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=60') center/cover no-repeat;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.3);
+      color: var(--orange); font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; padding: 6px 14px; border-radius: 100px;
+      margin-bottom: 24px; width: fit-content;
+    }
+    .hero-eyebrow span { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-        .logo-group p {
-            font-size: 12px;
-            color: #888;
-            letter-spacing: 1px;
-        }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 8vw, 52px);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--orange); }
+    .hero p {
+      font-size: 15px; color: var(--muted); line-height: 1.8;
+      max-width: 480px; margin-bottom: 36px;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange); color: #fff;
+      padding: 14px 28px; border-radius: 10px;
+      font-weight: 600; font-size: 14px; border: none;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      padding: 14px 28px; border-radius: 10px;
+      font-weight: 600; font-size: 14px;
+      border: 1px solid var(--border);
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      text-decoration: none; display: inline-block;
+    }
 
-        .lang-select {
-            background: var(--card-bg);
-            color: var(--text-light);
-            border: 1px solid var(--primary);
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; text-align: center;
+    }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; color: var(--orange); }
+    .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .hero {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+    /* ── SECTION SHARED ── */
+    .sec { padding: 56px 24px; }
+    .sec-eyebrow { font-size: 10px; letter-spacing: 2.5px; color: var(--orange); text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+    .sec-title { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 6px; line-height: 1.2; }
+    .sec-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+    .oline { width: 36px; height: 3px; background: var(--orange); border-radius: 2px; margin-bottom: 28px; }
 
-        .hero-text h2 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #FF6B35, #E84855);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* ── COURSES ── */
+    .courses-sec { background: var(--dark); }
+    .course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .course-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .course-card:hover { transform: translateY(-3px); border-color: rgba(255,107,53,0.4); }
+    .course-card img { width: 100%; height: 110px; object-fit: cover; display: block; }
+    .course-body { padding: 12px; flex: 1; display: flex; flex-direction: column; }
+    .c-badge {
+      display: inline-block; background: rgba(255,107,53,0.15); color: var(--orange);
+      font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 20px; margin-bottom: 7px; align-self: flex-start;
+    }
+    .c-name { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 6px; line-height: 1.3; }
+    .c-desc { font-size: 11px; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 10px; }
+    .c-pills { display: flex; flex-direction: column; gap: 4px; }
+    .c-pill { font-size: 10px; color: #aaa; background: #222; border-radius: 20px; padding: 3px 8px; width: fit-content; }
 
-        .hero-text p {
-            font-size: 18px;
-            color: #BBB;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    /* ── WHY US ── */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .why-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px;
+    }
+    .why-icon { font-size: 24px; margin-bottom: 10px; }
+    .why-title { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .why-desc { font-size: 11px; color: var(--muted); line-height: 1.6; }
 
-        .form-container {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid #333;
-            width: 100%;
-            max-width: 500px;
-            text-align: left;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            margin-top: 20px;
-        }
+    /* ── PLACEMENTS ── */
+    .placement-sec { background: var(--dark); }
+    .placement-hero {
+      width: 100%; border-radius: 14px; overflow: hidden;
+      margin-bottom: 24px; position: relative;
+    }
+    .placement-hero img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .placement-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 20px 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    }
+    .placement-overlay p { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+    .placement-overlay span { font-size: 12px; color: var(--orange); }
+    .studio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .studio-pill {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 6px; text-align: center;
+      font-size: 10px; font-weight: 600; color: var(--muted);
+    }
 
-        .form-container h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-            color: white;
-        }
+    /* ── TESTIMONIALS ── */
+    .testi-hero { width: 100%; height: 180px; object-fit: cover; border-radius: 14px; margin-bottom: 20px; display: block; }
+    .testi-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px; margin-bottom: 12px;
+    }
+    .t-stars { color: var(--orange); font-size: 13px; letter-spacing: 2px; margin-bottom: 10px; }
+    .t-text { font-size: 13px; color: #ccc; line-height: 1.8; font-style: italic; margin-bottom: 14px; }
+    .t-author { display: flex; align-items: center; gap: 10px; }
+    .t-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--orange); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 12px; flex-shrink: 0;
+    }
+    .t-name { font-size: 12px; font-weight: 700; color: #fff; margin: 0; }
+    .t-role { font-size: 10px; color: #666; margin: 2px 0 0; }
 
-        .form-container p {
-            font-size: 13px;
-            color: #888;
-            margin-bottom: 20px;
-        }
+    /* ── PARTNERS ── */
+    .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .partner-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; text-align: center; }
+    .partner-card img { width: 100%; height: 80px; object-fit: cover; display: block; opacity: 0.75; }
+    .partner-body { padding: 10px 8px; }
+    .p-name { font-size: 12px; font-weight: 700; color: #fff; margin: 0 0 2px; }
+    .p-type { font-size: 9px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
 
-        .form-group {
-            margin-bottom: 16px;
-        }
+    /* ── REGISTRATION FORM ── */
+    .form-sec { background: var(--dark); }
+    .form-wrap {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; padding: 28px 20px;
+    }
+    .form-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .form-sub { font-size: 13px; color: var(--muted); margin-bottom: 22px; line-height: 1.6; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: #aaa; margin-bottom: 6px; }
+    .form-group input, .form-group select {
+      width: 100%; background: #111; border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px;
+      color: #fff; font-size: 13px; font-family: 'Inter', sans-serif;
+      outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: var(--orange); }
+    .form-group select { appearance: none; -webkit-appearance: none; }
+    .form-group select option { background: #1a1a1a; }
+    .submit-btn {
+      width: 100%; background: var(--orange); color: #fff;
+      border: none; border-radius: 10px; padding: 14px;
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      font-family: 'Syne', sans-serif; margin-top: 4px;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--orange-dark); }
+    .success-msg {
+      display: none; background: rgba(255,107,53,0.1);
+      border: 1px solid rgba(255,107,53,0.3);
+      border-radius: 10px; padding: 16px; text-align: center;
+      margin-top: 16px; color: var(--orange); font-weight: 600; font-size: 14px;
+    }
 
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            color: #BBB;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 36px 24px 24px; text-align: center;
+    }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; color: var(--orange); margin-bottom: 8px; }
+    .footer-tagline { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; }
+    .footer-copy { font-size: 11px; color: #444; }
 
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            background-color: #121212;
-            border: 1px solid #444;
-            border-radius: 8px;
-            color: white;
-            font-size: 14px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background-color: var(--primary);
-            color: white;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 20px;
-            color: #4CAF50;
-            font-weight: bold;
-        }
-
-        /* SECTION HEADER STYLING */
-        .section-title {
-            text-align: center;
-            margin: 60px 0 20px;
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-        }
-
-        /* VISUAL AVGC COURSE CARDS LAYER */
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 20px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .course-visual-card {
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid #2A2A2A;
-            transition: 0.3s;
-        }
-
-        .course-visual-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        .course-image-frame {
-            width: 100%;
-            height: 200px;
-            background-color: #2c2c2c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .course-image-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .course-details {
-            padding: 24px;
-        }
-
-        .course-details h4 {
-            font-size: 20px;
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        .course-details p {
-            font-size: 14px;
-            color: #AAA;
-        }
-
-        /* METRIC TESTIMONIAL GRID STYLING */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            padding: 20px 5%;
-            max-width: 1200px;
-            margin: 0 auto 60px;
-        }
-
-        .testimonial-card {
-            background-color: #161616;
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
-            position: relative;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #DDD;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .author-profile {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .author-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .author-info h5 {
-            color: white;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .author-info p {
-            color: var(--primary);
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .gov-banner {
-            background: linear-gradient(90deg, rgba(255,107,53,0.1) 0%, rgba(76,175,80,0.1) 100%);
-            border: 1px solid #4CAF50;
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
-
-        .gov-banner h4 {
-            color: #4CAF50;
-            font-size: 14px;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 5%;
-            color: #666;
-            font-size: 14px;
-            border-top: 1px solid #2A2A2A;
-        }
-    </style>
+    /* ── LANG SWITCHER ── */
+    .lang-bar {
+      background: rgba(255,107,53,0.08); border-bottom: 1px solid var(--border);
+      padding: 8px 24px; display: flex; gap: 12px; overflow-x: auto;
+    }
+    .lang-btn {
+      font-size: 11px; color: var(--muted); background: none;
+      border: 1px solid transparent; border-radius: 20px;
+      padding: 4px 12px; cursor: pointer; white-space: nowrap;
+      font-family: 'Inter', sans-serif; transition: all 0.2s;
+    }
+    .lang-btn.active { color: var(--orange); border-color: var(--orange); background: rgba(255,107,53,0.1); }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-group">
-            <h1>Waves4youth</h1>
-            <p>NEXT-GEN AVGC SKILLS ACADEMY</p>
-        </div>
-        <select class="lang-select">
-            <option value="en">English</option>
-            <option value="hi">हिंदी (Hindi)</option>
-            <option value="te">తెలుగు (Telugu)</option>
-            <option value="ta">தமிழ் (Tamil)</option>
-        </select>
-    </header>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-logo">Waves<span>4youth</span></a>
+    <a href="#register" class="nav-cta">Apply Now</a>
+  </nav>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Ride the Wave of Digital Creativity</h2>
-            <p>Master 2D Animation, 3D Modeling, VFX Compositing, and Cinematography. Get direct access to Skill India certifications and placement matching with premium Indian production studios.</p>
-        </div>
-
-        <div class="form-container" id="formContainer">
-            <h3>Join the Next Generation Cohort</h3>
-            <p>Pre-register today to lock in your multi-lingual AI Co-Pilot allocation access.</p>
-            
-            <form id="intakeForm" onsubmit="handleFormSubmit(event)">
-                <div class="form-group">
-                    <label for="studentName">Full Name</label>
-                    <input type="text" id="studentName" placeholder="e.g., Rohan Das" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="studentMobile">Mobile Number</label>
-                    <input type="tel" id="studentMobile" placeholder="e.g., +91 98765 43210" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="avgcTrack">Select Primary Specialization Track</label>
-                    <select id="avgcTrack" required>
-                        <option value="" disabled selected>Choose your vertical...</option>
-                        <option value="2d">2D Animation & Storyboarding</option>
-                        <option value="3d">3D Assets Modeling & Rigging</option>
-                        <option value="vfx">VFX Digital Compositing</option>
-                        <option value="cinema">Cinematography & Frame Lighting</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="submit-btn">Secure My Early Access Slot 🚀</button>
-            </form>
-            
-            <div class="success-message" id="successMessage">
-                🎉 Shabaash! Your early access slot has been safely secured. We will text you your setup key when the multi-lingual labs open!
-            </div>
-<style>
-  /* ── SHARED SECTION STYLES ── */
-  .w4y-sec {
-    padding: 48px 20px;
-    border-top: 1px solid #1e1e1e;
-  }
-  .w4y-tag {
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    color: #e8622a;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .w4y-title {
-    font-size: 26px;
-    font-weight: 800;
-    color: #ffffff;
-    margin: 0 0 6px;
-  }
-  .w4y-sub {
-    font-size: 14px;
-    color: #888888;
-    margin: 0 0 20px;
-  }
-  .w4y-oline {
-    width: 40px;
-    height: 3px;
-    background: #e8622a;
-    border-radius: 2px;
-    margin-bottom: 28px;
-  }
-
-  /* ── COURSES GRID ── */
-  .course-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-  .course-card {
-    background: #1a1a1a;
-    border: 1px solid #252525;
-    border-radius: 14px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  .course-card img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    display: block;
-  }
-  .course-body {
-    padding: 12px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .course-badge {
-    display: inline-block;
-    background: rgba(232, 98, 42, 0.15);
-    color: #e8622a;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 20px;
-    margin-bottom: 8px;
-    align-self: flex-start;
-  }
-  .course-name {
-    font-size: 13px;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 6px;
-    line-height: 1.4;
-  }
-  .course-desc {
-    font-size: 11px;
-    color: #888888;
-    margin: 0 0 10px;
-    line-height: 1.6;
-    flex: 1;
-  }
-  .course-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .course-pill {
-    font-size: 10px;
-    color: #aaaaaa;
-    background: #222222;
-    border-radius: 20px;
-    padding: 3px 8px;
-    display: inline-block;
-    width: fit-content;
-  }
-
-  /* ── TESTIMONIALS ── */
-  .testi-hero {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 14px;
-    margin-bottom: 20px;
-    display: block;
-  }
-  .testi-card {
-    background: #1a1a1a;
-    border: 1px solid #252525;
-    border-radius: 14px;
-    padding: 20px;
-    margin-bottom: 14px;
-  }
-  .testi-stars {
-    color: #e8622a;
-    font-size: 14px;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-  }
-  .testi-text {
-    font-size: 13px;
-    color: #cccccc;
-    line-height: 1.8;
-    margin: 0 0 16px;
-    font-style: italic;
-  }
-  .testi-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .testi-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: #e8622a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 13px;
-    color: #ffffff;
-    flex-shrink: 0;
-  }
-  .testi-name {
-    font-size: 13px;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0;
-  }
-  .testi-role {
-    font-size: 11px;
-    color: #666666;
-    margin: 2px 0 0;
-  }
-
-  /* ── PARTNERS ── */
-  .partner-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .partner-card {
-    background: #1a1a1a;
-    border: 1px solid #252525;
-    border-radius: 12px;
-    overflow: hidden;
-    text-align: center;
-  }
-  .partner-card img {
-    width: 100%;
-    height: 90px;
-    object-fit: cover;
-    display: block;
-    opacity: 0.8;
-  }
-  .partner-body {
-    padding: 12px 8px;
-  }
-  .partner-name {
-    font-size: 12px;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 3px;
-  }
-  .partner-type {
-    font-size: 10px;
-    color: #666666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-</style>
-
-
-<!-- ══════════════════════════════════════════════
-     SECTION 1 — COURSES & PROGRAMS (2-column grid)
-     ══════════════════════════════════════════════ -->
-<section class="w4y-sec">
-  <p class="w4y-tag">What You'll Learn</p>
-  <h2 class="w4y-title">Courses &amp; Programs</h2>
-  <p class="w4y-sub">Skill India certified tracks, taught in your language</p>
-  <div class="w4y-oline"></div>
-
-  <div class="course-grid">
-
-    <!-- 2D Animation -->
-    <div class="course-card">
-      <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80" alt="2D Animation" loading="lazy">
-      <div class="course-body">
-        <span class="course-badge">2D Animation</span>
-        <h3 class="course-name">2D Animation &amp; Storyboarding</h3>
-        <p class="course-desc">Frame-by-frame animation using Adobe Animate and Toon Boom.</p>
-        <div class="course-meta">
-          <span class="course-pill">⏱ 4 Months</span>
-          <span class="course-pill">🎓 Skill India</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3D Modeling -->
-    <div class="course-card">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="3D Modeling" loading="lazy">
-      <div class="course-body">
-        <span class="course-badge">3D Modeling</span>
-        <h3 class="course-name">3D Assets Modeling &amp; Rigging</h3>
-        <p class="course-desc">Production-ready 3D models for films and OTT using Blender &amp; Maya.</p>
-        <div class="course-meta">
-          <span class="course-pill">⏱ 5 Months</span>
-          <span class="course-pill">🎓 Skill India</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- VFX -->
-    <div class="course-card">
-      <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&q=80" alt="VFX" loading="lazy">
-      <div class="course-body">
-        <span class="course-badge">VFX</span>
-        <h3 class="course-name">VFX Digital Compositing</h3>
-        <p class="course-desc">Green screen, motion tracking &amp; compositing with Nuke and After Effects.</p>
-        <div class="course-meta">
-          <span class="course-pill">⏱ 5 Months</span>
-          <span class="course-pill">🎓 Skill India</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cinematography -->
-    <div class="course-card">
-      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80" alt="Cinematography" loading="lazy">
-      <div class="course-body">
-        <span class="course-badge">Cinematography</span>
-        <h3 class="course-name">Cinematography &amp; Frame Lighting</h3>
-        <p class="course-desc">Camera movement, composition &amp; lighting for Indian film productions.</p>
-        <div class="course-meta">
-          <span class="course-pill">⏱ 3 Months</span>
-          <span class="course-pill">🎓 Skill India</span>
-        </div>
-      </div>
-    </div>
-
+  <!-- LANG BAR -->
+  <div class="lang-bar" style="margin-top:61px;">
+    <button class="lang-btn active" onclick="setLang(this)">English</button>
+    <button class="lang-btn" onclick="setLang(this)">हिंदी</button>
+    <button class="lang-btn" onclick="setLang(this)">తెలుగు</button>
+    <button class="lang-btn" onclick="setLang(this)">தமிழ்</button>
   </div>
-</section>
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow"><span></span> India's Next-Gen AVGC Academy</div>
+    <h1>Ride the Wave of<br><em>Digital Creativity</em></h1>
+    <p>Master 2D Animation, 3D Modeling, VFX & Cinematography. Skill India certified. Taught in your language with an AI Co-Pilot.</p>
+    <div class="hero-btns">
+      <a href="#register" class="btn-primary">Secure My Slot 🚀</a>
+      <a href="#courses" class="btn-outline">Explore Courses</a>
+    </div>
+  </section>
 
-<!-- ══════════════════════════════════════════════
-     SECTION 2 — TESTIMONIALS
-     ══════════════════════════════════════════════ -->
-<section class="w4y-sec">
-  <p class="w4y-tag">Student Stories</p>
-  <h2 class="w4y-title">Testimonials</h2>
-  <p class="w4y-sub">Real students. Real placements across India.</p>
-  <div class="w4y-oline"></div>
-
-  <img class="testi-hero"
-    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80"
-    alt="Students learning together" loading="lazy">
-
-  <div class="testi-card">
-    <div class="testi-stars">★★★★★</div>
-    <p class="testi-text">"The multilingual AI Co-Pilot made all the difference. I learned VFX in Telugu and got placed at a Hyderabad studio within 2 months of completing the course."</p>
-    <div class="testi-author">
-      <div class="testi-avatar">SR</div>
-      <div>
-        <p class="testi-name">Suresh Reddy</p>
-        <p class="testi-role">VFX Artist · Hyderabad</p>
-      </div>
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div>
+      <div class="stat-num">4+</div>
+      <div class="stat-label">Courses</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Placement Support</div>
+    </div>
+    <div>
+      <div class="stat-num">4</div>
+      <div class="stat-label">Languages</div>
     </div>
   </div>
 
-  <div class="testi-card">
-    <div class="testi-stars">★★★★★</div>
-    <p class="testi-text">"As a Tamil speaker I always struggled with English-only courses. Waves4youth taught me 3D modeling in my language. Now I work at a Chennai OTT studio."</p>
-    <div class="testi-author">
-      <div class="testi-avatar">PL</div>
-      <div>
-        <p class="testi-name">Priya Lakshmi</p>
-        <p class="testi-role">3D Artist · Chennai</p>
-      </div>
-    </div>
-  </div>
+  <!-- COURSES -->
+  <section class="sec courses-sec" id="courses">
+    <p class="sec-eyebrow">What You'll Learn</p>
+    <h2 class="sec-title">Courses & Programs</h2>
+    <p class="sec-sub">Skill India certified tracks, taught in your language with AI support</p>
+    <div class="oline"></div>
 
-  <div class="testi-card">
-    <div class="testi-stars">★★★★★</div>
-    <p class="testi-text">"The Skill India certification gave my resume instant credibility. I secured a storyboard role in Mumbai just 6 weeks after finishing the 2D Animation track."</p>
-    <div class="testi-author">
-      <div class="testi-avatar">AM</div>
-      <div>
-        <p class="testi-name">Arjun Mehta</p>
-        <p class="testi-role">Storyboard Artist · Mumbai</p>
+    <div class="course-grid">
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80" alt="2D Animation" loading="lazy">
+        <div class="course-body">
+          <span class="c-badge">2D Animation</span>
+          <h3 class="c-name">2D Animation & Storyboarding</h3>
+          <p class="c-desc">Adobe Animate, Toon Boom & visual storytelling for top studios.</p>
+          <div class="c-pills">
+            <span class="c-pill">⏱ 4 Months</span>
+            <span class="c-pill">🎓 Skill India</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="3D Modeling" loading="lazy">
+        <div class="course-body">
+          <span class="c-badge">3D Modeling</span>
+          <h3 class="c-name">3D Assets Modeling & Rigging</h3>
+          <p class="c-desc">Blender & Maya for OTT, films & gaming productions.</p>
+          <div class="c-pills">
+            <span class="c-pill">⏱ 5 Months</span>
+            <span class="c-pill">🎓 Skill India</span>
+          </div>
+        </div>
+      </div>
 
-<!-- ══════════════════════════════════════════════
-     SECTION 3 — PARTNERS & CERTIFICATIONS
-     ══════════════════════════════════════════════ -->
-<section class="w4y-sec">
-  <p class="w4y-tag">Backed By</p>
-  <h2 class="w4y-title">Partners &amp; Certifications</h2>
-  <p class="w4y-sub">Government bodies and premium studios behind every student</p>
-  <div class="w4y-oline"></div>
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&q=80" alt="VFX" loading="lazy">
+        <div class="course-body">
+          <span class="c-badge">VFX</span>
+          <h3 class="c-name">VFX Digital Compositing</h3>
+          <p class="c-desc">Nuke & After Effects. Green screen, tracking & Bollywood VFX.</p>
+          <div class="c-pills">
+            <span class="c-pill">⏱ 5 Months</span>
+            <span class="c-pill">🎓 Skill India</span>
+          </div>
+        </div>
+      </div>
 
-  <div class="partner-grid">
-    <div class="partner-card">
-      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80" alt="Skill India" loading="lazy">
-      <div class="partner-body">
-        <p class="partner-name">Skill India</p>
-        <p class="partner-type">Govt. Partner</p>
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80" alt="Cinematography" loading="lazy">
+        <div class="course-body">
+          <span class="c-badge">Cinematography</span>
+          <h3 class="c-name">Cinematography & Frame Lighting</h3>
+          <p class="c-desc">Camera, composition & studio lighting for Indian productions.</p>
+          <div class="c-pills">
+            <span class="c-pill">⏱ 3 Months</span>
+            <span class="c-pill">🎓 Skill India</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="partner-card">
-      <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80" alt="AVGC Council" loading="lazy">
-      <div class="partner-body">
-        <p class="partner-name">AVGC Council</p>
-        <p class="partner-type">Industry Body</p>
-      </div>
-    </div>
-    <div class="partner-card">
-      <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80" alt="NSDC" loading="lazy">
-      <div class="partner-body">
-        <p class="partner-name">NSDC</p>
-        <p class="partner-type">Certification</p>
-      </div>
-    </div>
-    <div class="partner-card">
-      <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&q=80" alt="Premium Studios" loading="lazy">
-      <div class="partner-body">
-        <p class="partner-name">Premium Studios</p>
-        <p class="partner-type">Placement Partners</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
-     END OF NEW SECTIONS v2
-     ============================================================ -->
+  <!-- WHY WAVES4YOUTH -->
+  <section class="sec">
+    <p class="sec-eyebrow">Why Choose Us</p>
+    <h2 class="sec-title">Built Different</h2>
+    <p class="sec-sub">What makes Waves4youth stand apart from every other AVGC institute in India</p>
+    <div class="oline"></div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🤖</div>
+        <div class="why-title">AI Co-Pilot</div>
+        <div class="why-desc">Multilingual AI assistant that teaches, answers, and guides you in your language.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌐</div>
+        <div class="why-title">4 Languages</div>
+        <div class="why-desc">Learn in Hindi, Telugu, Tamil, or English. Your language, your pace.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎓</div>
+        <div class="why-title">Skill India Cert</div>
+        <div class="why-desc">Government-recognized certification that unlocks jobs across India.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏢</div>
+        <div class="why-title">Studio Placements</div>
+        <div class="why-desc">Direct placement matching with premium Indian production studios.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACEMENTS -->
+  <section class="sec placement-sec">
+    <p class="sec-eyebrow">Career Outcomes</p>
+    <h2 class="sec-title">Where Our Students Land</h2>
+    <p class="sec-sub">Our graduates are placed across India's top media & entertainment studios</p>
+    <div class="oline"></div>
+
+    <div class="placement-hero">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80" alt="Students at work" loading="lazy">
+      <div class="placement-overlay">
+        <span>100% Placement Assistance</span>
+        <p>Real jobs at real studios</p>
+      </div>
+    </div>
+
+    <div class="studio-grid">
+      <div class="studio-pill">Prime Focus</div>
+      <div class="studio-pill">DNEG</div>
+      <div class="studio-pill">Redchillies VFX</div>
+      <div class="studio-pill">Green Gold</div>
+      <div class="studio-pill">Cosmos Maya</div>
+      <div class="studio-pill">& More</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec">
+    <p class="sec-eyebrow">Student Stories</p>
+    <h2 class="sec-title">Testimonials</h2>
+    <p class="sec-sub">Real students. Real placements across India.</p>
+    <div class="oline"></div>
+
+    <img class="testi-hero"
+      src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=700&q=80"
+      alt="Students learning" loading="lazy">
+
+    <div class="testi-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"The multilingual AI Co-Pilot made all the difference. I learned VFX in Telugu and got placed at a Hyderabad studio within 2 months of completing the course."</p>
+      <div class="t-author">
+        <div class="t-avatar">SR</div>
+        <div>
+          <p class="t-name">Suresh Reddy</p>
+          <p class="t-role">VFX Artist · Hyderabad</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"As a Tamil speaker I always struggled with English-only courses. Waves4youth taught me 3D modeling in my own language. Now I work at a Chennai OTT studio."</p>
+      <div class="t-author">
+        <div class="t-avatar">PL</div>
+        <div>
+          <p class="t-name">Priya Lakshmi</p>
+          <p class="t-role">3D Artist · Chennai</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Skill India certification gave my resume instant credibility. I secured a storyboard role in Mumbai just 6 weeks after finishing the 2D Animation track."</p>
+      <div class="t-author">
+        <div class="t-avatar">AM</div>
+        <div>
+          <p class="t-name">Arjun Mehta</p>
+          <p class="t-role">Storyboard Artist · Mumbai</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="sec" style="background:var(--dark);">
+    <p class="sec-eyebrow">Backed By</p>
+    <h2 class="sec-title">Partners & Certifications</h2>
+    <p class="sec-sub">Government bodies and premium studios backing every student</p>
+    <div class="oline"></div>
+
+    <div class="partner-grid">
+      <div class="partner-card">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80" alt="Skill India" loading="lazy">
+        <div class="partner-body"><p class="p-name">Skill India</p><p class="p-type">Govt. Partner</p></div>
+      </div>
+      <div class="partner-card">
+        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80" alt="AVGC Council" loading="lazy">
+        <div class="partner-body"><p class="p-name">AVGC Council</p><p class="p-type">Industry Body</p></div>
+      </div>
+      <div class="partner-card">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80" alt="NSDC" loading="lazy">
+        <div class="partner-body"><p class="p-name">NSDC</p><p class="p-type">Certification</p></div>
+      </div>
+      <div class="partner-card">
+        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&q=80" alt="Studios" loading="lazy">
+        <div class="partner-body"><p class="p-name">Premium Studios</p><p class="p-type">Placement Partners</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION FORM -->
+  <section class="sec form-sec" id="register">
+    <p class="sec-eyebrow">Join the Academy</p>
+    <h2 class="sec-title">Apply for Early Access</h2>
+    <div class="oline"></div>
+
+    <div class="form-wrap">
+      <h3 class="form-title">Join the Next Generation Cohort</h3>
+      <p class="form-sub">Pre-register today to lock in your multilingual AI Co-Pilot access and early placement priority.</p>
+
+      <form id="intakeForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="studentName">Full Name</label>
+          <input type="text" id="studentName" placeholder="e.g., Rohan Das" required>
+        </div>
+        <div class="form-group">
+          <label for="studentMobile">Mobile Number</label>
+          <input type="tel" id="studentMobile" placeholder="e.g., 9876543210" required>
+        </div>
+        <div class="form-group">
+          <label for="avgcTrack">Select Program Track</label>
+          <select id="avgcTrack" required>
+            <option value="" disabled selected>Choose your specialization</option>
+            <option value="2d">2D Animation & Storyboarding</option>
+            <option value="3d">3D Assets Modeling & Rigging</option>
+            <option value="vfx">VFX Digital Compositing</option>
+            <option value="cinema">Cinematography & Frame Lighting</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Secure My Early Access Slot 🚀</button>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        🎉 Shabaash! Your early access slot has been secured. Our team will reach out within 24 hours!
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Waves4youth</div>
+    <p class="footer-tagline">Next-Gen AVGC Skills Academy · India</p>
+    <div class="footer-links">
+      <a href="#courses">Courses</a>
+      <a href="#register">Apply</a>
+      <a href="mailto:hello@waves4youth.in">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Waves4youth. All rights reserved. | Powered by Skill India</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('intakeForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+    function setLang(btn) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
+waves4youth_v2_index.html
+Displaying waves4youth_v2_index.html.
