@@ -349,3 +349,386 @@
             <div class="success-message" id="successMessage">
                 🎉 Shabaash! Your early access slot has been safely secured. We will text you your setup key when the multi-lingual labs open!
             </div>
+<!-- ── INTERNAL STYLES (add inside your existing <style> or <head>) ── -->
+<style>
+  /* New Sections */
+  .w4y-sec {
+    padding: 48px 20px;
+    border-top: 1px solid #1e1e1e;
+  }
+  .w4y-tag {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: #e8622a;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .w4y-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px;
+  }
+  .w4y-sub {
+    font-size: 14px;
+    color: #888888;
+    margin: 0 0 20px;
+  }
+  .w4y-oline {
+    width: 40px;
+    height: 3px;
+    background: #e8622a;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+
+  /* ── COURSE CARDS ── */
+  .course-card {
+    background: #1a1a1a;
+    border: 1px solid #252525;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .course-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .course-body {
+    padding: 16px;
+  }
+  .course-badge {
+    display: inline-block;
+    background: rgba(232, 98, 42, 0.15);
+    color: #e8622a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .course-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px;
+  }
+  .course-desc {
+    font-size: 13px;
+    color: #888888;
+    margin: 0 0 14px;
+    line-height: 1.7;
+  }
+  .course-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .course-pill {
+    font-size: 11px;
+    color: #aaaaaa;
+    background: #222222;
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testi-hero {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .testi-card {
+    background: #1a1a1a;
+    border: 1px solid #252525;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 14px;
+  }
+  .testi-stars {
+    color: #e8622a;
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .testi-text {
+    font-size: 13px;
+    color: #cccccc;
+    line-height: 1.8;
+    margin: 0 0 16px;
+    font-style: italic;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .testi-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #e8622a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+  .testi-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+  }
+  .testi-role {
+    font-size: 11px;
+    color: #666666;
+    margin: 2px 0 0;
+  }
+
+  /* ── PARTNERS ── */
+  .partner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .partner-card {
+    background: #1a1a1a;
+    border: 1px solid #252525;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .partner-card img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.8;
+  }
+  .partner-body {
+    padding: 12px 8px;
+  }
+  .partner-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 3px;
+  }
+  .partner-type {
+    font-size: 10px;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1 — COURSES & PROGRAMS
+     ══════════════════════════════════════════════ -->
+<section class="w4y-sec">
+  <p class="w4y-tag">What You'll Learn</p>
+  <h2 class="w4y-title">Courses &amp; Programs</h2>
+  <p class="w4y-sub">Skill India certified tracks, taught in your language</p>
+  <div class="w4y-oline"></div>
+
+  <!-- 2D Animation -->
+  <div class="course-card">
+    <img
+      src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&q=80"
+      alt="2D Animation storyboard desk"
+      loading="lazy"
+    >
+    <div class="course-body">
+      <span class="course-badge">2D Animation</span>
+      <h3 class="course-name">2D Animation &amp; Storyboarding</h3>
+      <p class="course-desc">Master frame-by-frame animation, character rigging, and visual storytelling using Adobe Animate and Toon Boom — tools used by top Indian studios.</p>
+      <div class="course-meta">
+        <span class="course-pill">⏱ 4 Months</span>
+        <span class="course-pill">🎓 Skill India Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Modeling -->
+  <div class="course-card">
+    <img
+      src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80"
+      alt="3D modeling on computer"
+      loading="lazy"
+    >
+    <div class="course-body">
+      <span class="course-badge">3D Modeling</span>
+      <h3 class="course-name">3D Assets Modeling &amp; Rigging</h3>
+      <p class="course-desc">Build production-ready 3D models, textures, and character rigs for games, films, and OTT content using Blender and Maya.</p>
+      <div class="course-meta">
+        <span class="course-pill">⏱ 5 Months</span>
+        <span class="course-pill">🎓 Skill India Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VFX -->
+  <div class="course-card">
+    <img
+      src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80"
+      alt="VFX compositing workstation"
+      loading="lazy"
+    >
+    <div class="course-body">
+      <span class="course-badge">VFX</span>
+      <h3 class="course-name">VFX Digital Compositing</h3>
+      <p class="course-desc">Learn green screen keying, motion tracking, and visual effects compositing with Nuke and After Effects — used in top Bollywood productions.</p>
+      <div class="course-meta">
+        <span class="course-pill">⏱ 5 Months</span>
+        <span class="course-pill">🎓 Skill India Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cinematography -->
+  <div class="course-card">
+    <img
+      src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=700&q=80"
+      alt="Camera and film lighting setup"
+      loading="lazy"
+    >
+    <div class="course-body">
+      <span class="course-badge">Cinematography</span>
+      <h3 class="course-name">Cinematography &amp; Frame Lighting</h3>
+      <p class="course-desc">Master camera movement, frame composition, and studio lighting setups for live-action and hybrid Indian film and OTT productions.</p>
+      <div class="course-meta">
+        <span class="course-pill">⏱ 3 Months</span>
+        <span class="course-pill">🎓 Skill India Certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2 — TESTIMONIALS
+     ══════════════════════════════════════════════ -->
+<section class="w4y-sec">
+  <p class="w4y-tag">Student Stories</p>
+  <h2 class="w4y-title">Testimonials</h2>
+  <p class="w4y-sub">Real students. Real placements across India.</p>
+  <div class="w4y-oline"></div>
+
+  <img
+    class="testi-hero"
+    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80"
+    alt="Students collaborating and learning together"
+    loading="lazy"
+  >
+
+  <div class="testi-card">
+    <div class="testi-stars">★★★★★</div>
+    <p class="testi-text">"The multilingual AI Co-Pilot made all the difference. I learned VFX in Telugu and got placed at a Hyderabad studio within 2 months of completing the course."</p>
+    <div class="testi-author">
+      <div class="testi-avatar">SR</div>
+      <div>
+        <p class="testi-name">Suresh Reddy</p>
+        <p class="testi-role">VFX Artist · Hyderabad</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="testi-card">
+    <div class="testi-stars">★★★★★</div>
+    <p class="testi-text">"As a Tamil speaker I always struggled with English-only courses. Waves4youth taught me 3D modeling in my language. Now I work at a Chennai OTT studio."</p>
+    <div class="testi-author">
+      <div class="testi-avatar">PL</div>
+      <div>
+        <p class="testi-name">Priya Lakshmi</p>
+        <p class="testi-role">3D Artist · Chennai</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="testi-card">
+    <div class="testi-stars">★★★★★</div>
+    <p class="testi-text">"The Skill India certification gave my resume instant credibility. I secured a storyboard role in Mumbai just 6 weeks after finishing the 2D Animation track."</p>
+    <div class="testi-author">
+      <div class="testi-avatar">AM</div>
+      <div>
+        <p class="testi-name">Arjun Mehta</p>
+        <p class="testi-role">Storyboard Artist · Mumbai</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3 — PARTNERS & CERTIFICATIONS
+     ══════════════════════════════════════════════ -->
+<section class="w4y-sec">
+  <p class="w4y-tag">Backed By</p>
+  <h2 class="w4y-title">Partners &amp; Certifications</h2>
+  <p class="w4y-sub">Government bodies and premium studios behind every student</p>
+  <div class="w4y-oline"></div>
+
+  <div class="partner-grid">
+    <div class="partner-card">
+      <img
+        src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80"
+        alt="Skill India partnership"
+        loading="lazy"
+      >
+      <div class="partner-body">
+        <p class="partner-name">Skill India</p>
+        <p class="partner-type">Govt. Partner</p>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <img
+        src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80"
+        alt="AVGC Promotion Council"
+        loading="lazy"
+      >
+      <div class="partner-body">
+        <p class="partner-name">AVGC Council</p>
+        <p class="partner-type">Industry Body</p>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <img
+        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80"
+        alt="NSDC Certification"
+        loading="lazy"
+      >
+      <div class="partner-body">
+        <p class="partner-name">NSDC</p>
+        <p class="partner-type">Certification</p>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <img
+        src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&q=80"
+        alt="Premium Indian Studios"
+        loading="lazy"
+      >
+      <div class="partner-body">
+        <p class="partner-name">Premium Studios</p>
+        <p class="partner-type">Placement Partners</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
